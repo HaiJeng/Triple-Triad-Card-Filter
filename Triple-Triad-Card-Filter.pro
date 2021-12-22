@@ -3,6 +3,7 @@ QT       += axcontainer
 QT       += network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+RC_ICON = myico.ico
 
 CONFIG += c++11
 
@@ -32,7 +33,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    ff14wiki.py
+    ff14wiki.py \
+    myico.ico
 
 
 win32: LIBS += -LC:/Users/d4127/AppData/Local/Programs/Python/Python38/libs/ -lpython38
@@ -42,3 +44,4 @@ DEPENDPATH += C:/Users/d4127/AppData/Local/Programs/Python/Python38/include
 
 win32:!win32-g++: PRE_TARGETDEPS += C:/Users/d4127/AppData/Local/Programs/Python/Python38/libs/python38.lib
 #else:win32-g++: PRE_TARGETDEPS += C:/Users/d4127/AppData/Local/Programs/Python/Python38/libs/libpython38.a
+

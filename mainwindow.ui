@@ -7,11 +7,15 @@
     <x>0</x>
     <y>0</y>
     <width>1268</width>
-    <height>534</height>
+    <height>568</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>myico.ico</normaloff>myico.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
