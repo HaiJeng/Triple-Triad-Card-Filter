@@ -1,5 +1,6 @@
 #include "mainwindow.h"
-
+#include <QClipboard>
+#include <QMessageBox>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -117,5 +118,29 @@ void MainWindow::on_searchButton_clicked()
         tablewidget->setItem(i,cnCardNumUnder,new QTableWidgetItem(QString::number(CardsList[i].cardNumUnder),ctCardNumUnder));
         tablewidget->setItem(i,cnCardNumLeft,new QTableWidgetItem(QString::number(CardsList[i].cardNumLeft),ctCardNumLeft));
     }
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    int rows=ui->tableWidget->rowCount();
+    int column=ui->tableWidget->columnCount();
+    QString str="";
+    for(int i=0; i<rows; i++) // 取出每个格子的内容
+    {
+        for(int j=0; j<column; j++){
+            if(ui->tableWidget->item(i,j) != NULL){//一定要先判断非空，否则会报错
+                str.append(ui->tableWidget->item(i,j)->text());
+                str.append("\t");
+            }else{
+                str.append(""); //空字符弄成空格
+                str.append("\t");
+            }
+        }
+        str.append("\n");
+    }
+    QClipboard *board = QApplication::clipboard();
+    board->setText(str);
+    QMessageBox::information(NULL, "信息", "复制成功！");
 }
 

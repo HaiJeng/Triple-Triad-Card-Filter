@@ -32,6 +32,8 @@ private slots:
 
     void on_searchButton_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     //自定义单元格type
     enum CellType{ctCardName=1000,ctCardRarity,ctCardType,ctCardNumTop,

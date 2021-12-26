@@ -43,6 +43,18 @@
              </widget>
             </item>
             <item>
+             <widget class="QPushButton" name="pushButton">
+              <property name="font">
+               <font>
+                <pointsize>16</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>复制表格</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QPushButton" name="clearAllButton">
               <property name="font">
                <font>
